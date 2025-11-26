@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1280.0" spacing="5.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ugp.mc.deobfuscator.Deobfuscator3000">
+   <children>
+      <HBox fx:id="mappingsPathBox" spacing="5.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="25.0" />
+         </VBox.margin>
+         <children>
+            <TextField fx:id="t1" prefHeight="40.0" prefWidth="40.0" promptText="Deobf mappings folder" HBox.hgrow="ALWAYS" />
+            <Button fx:id="dir1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true">
+                     <image>
+                        <Image url="org/ugp/mc/deobfuscator/assets/folder.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="file1" layoutX="550.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="34.0">
+                     <image>
+                        <Image url="org/ugp/mc/deobfuscator/assets/file.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="modPathBox" layoutX="20.0" layoutY="35.0" spacing="5.0">
+         <children>
+            <TextField fx:id="t2" prefHeight="40.0" prefWidth="40.0" promptText="Mod folder or file" HBox.hgrow="ALWAYS" />
+            <Button fx:id="dir2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true">
+                     <image>
+                        <Image url="org/ugp/mc/deobfuscator/assets/folder.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="file2" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="34.0">
+                     <image>
+                        <Image url="org/ugp/mc/deobfuscator/assets/file.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="25.0" />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane fx:id="logScoll" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets left="6.0" right="6.0" />
+         </VBox.margin>
+         <content>
+            <VBox fx:id="log" fillWidth="false" prefHeight="200.0" prefWidth="100.0" />
+         </content>
+      </ScrollPane>
+      <StackPane>
+         <VBox.margin>
+            <Insets left="6.0" right="6.0" top="-6.0" />
+         </VBox.margin>
+         <children>
+            <ProgressBar fx:id="progress" maxWidth="1.7976931348623157E308" prefHeight="25.0" progress="0.0" style="-fx-accent: lime;" />
+            <Label fx:id="progressText" StackPane.alignment="CENTER_LEFT">
+               <StackPane.margin>
+                  <Insets left="5.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+      <StackPane>
+         <children>
+            <CheckBox fx:id="shouldDeobf" mnemonicParsing="false" prefWidth="0.0" scaleX="2.0" scaleY="2.0" selected="true" translateX="85.0" />
+            <Button fx:id="deobf" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="Deobfuscate">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </StackPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" top="5.0" />
+   </padding>
+</VBox>

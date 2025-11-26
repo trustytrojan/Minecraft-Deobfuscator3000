@@ -1,11 +1,18 @@
-# About
+# Minecraft-Deobfuscator3000 Decompiled
+- Decompilied with CFR, removing the need to run on Windows.
+- Chose to stick to Java 17. Provides [setup_javafx.sh](/setup_javafx.sh) script for downloading JavaFX 17 for Linux.
+- Run `make` to compile all classes into `bin`, and `make run` to run the app.
+
+**The README contents from the original repo are below.**
+
+## About
 Deobfuscator3000 is a universal tool for deobfuscating minecraft mods! It meant to be upgraded and improved variant of BON that was abandoned by its authors a long time ago.
 Compare to BON this one allows you to choose obfuscation mappings by your self and it can decompile and deobfuscate your mod all at once!
 Deobfuscator3000 can also deobfuscate individual java files and it can also works with zip files not only jars!
 It also has more user-friendly UI with tooltips, logging console and other things! <br>
 Deobfuscator3000 is perfect choice for minecraft modders that lost their source code or for anyone that is interested in sources of other mods!
 
-# How to use
+## How to use
 1. As well as BON, Deobfuscator3000 is programmed in Java so you need Java to run it!
 2. First you need to select deobfuscation mappings! These are excel files that tell the deobfuscator what to do with your mod! Defaulty there are mappings for 1.7.10 and 1.12.X and all what you need to do is write/select path to one of these folders into the first text field. If your mod is for different version, then you need to obtain mappings for this certain version! In this case the best thing you can do is download them from [MCP](http://www.modcoderpack.com/), unpack the downloaded zip and select "conf" folders path into first the text field!
 3. Now you need to decompile your mods jar! For this, I recommend to use Procyon on this online [Java decompiler](http://www.javadecompilers.com/).
@@ -18,9 +25,9 @@ Since application was wrapped into installer and procyon decompiler was implemen
 3. Select your mods .jar file and make sure that checkbox is checked!
 4. Click on "Deobfuscate", wait for it to finish and you are basically done (decompiled and deobfuscate mod sources will appear in the same folder as original mod jar file)!
 
-# Valid deobfuscation mappings composition
+## Valid deobfuscation mappings composition
 Deobfuscation mappings are instructions for deobfuscator! They supposed to be a .csv (excel format) file or group of 3 files, the fields, methods, and params (each is optional since 1.0.5 but must be at least one of them) in one folder! Inside these files there supposed to be some sort of map with keys and values! These keys supposed to be in the first column of excel file and must contains at last one "\_" or since 1.1.0, can alternatively starts with "#" and then do not need to contains "\_"! And second column in excel file supposed to be the values for the keys. These values can be anything, there are no limits! But value should not be the same as key is and also should not be empty!
 
-# Info
+## Info
 1. If your mods files were not deobfuscated correctly it is most likely not the deobfuscators fault but invalid mappings! Make sure your mappings are for same minecraft version as your mod is! If you have encountered some other issues please feel free to report it! Also always download the latest version of deobfuscator! 
 2. Deobfuscator will unzip your .jar files while creating folders in process and during deobfuscation it will be editing created files in your system or even changing their extensions (.class -> .java) which is something that your antivirus might not like! In such a case, I would recommend disabling your antivirus or add Deobfuscator app as scan exception!
