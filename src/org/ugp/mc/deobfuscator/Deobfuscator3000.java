@@ -68,6 +68,7 @@ import org.ugp.mc.deobfuscator.ClassTypeLoader;
 import javafx.collections.ListChangeListener;
 
 public class Deobfuscator3000 {
+    private static final String DEOBF_FOLDER_SUFFIX = "-deobf";
     public static final DecompilerSettings DECOMP_SETTINGS = DecompilerSettings.javaDefaults();
     @FXML
     public Button deobf;
@@ -242,7 +243,7 @@ public class Deobfuscator3000 {
                 boolean bl = isZip = this.actualMod.getAbsolutePath().toLowerCase().endsWith(".zip") || this.actualMod.getAbsolutePath().toLowerCase().endsWith(".jar");
                 if (isZip) {
                     this.doLog("Extracting mod files!");
-                    File p = new File(String.valueOf(this.actualMod.getAbsolutePath().replaceAll(".zip|.jar", "")) + " deobf");
+                    File p = new File(String.valueOf(this.actualMod.getAbsolutePath().replaceAll(".zip|.jar", "")) + DEOBF_FOLDER_SUFFIX);
                     if (p.exists()) {
                         Alert sureUwantReplace = new Alert(Alert.AlertType.CONFIRMATION, "Mod was probably already deobfuscated before!\nAre you sure you want to override?\n", new ButtonType[]{ButtonType.YES, ButtonType.CANCEL});
                         sureUwantReplace.setTitle("Deobfuscated?");
@@ -273,7 +274,7 @@ public class Deobfuscator3000 {
                         double t0 = System.nanoTime();
                         Platform.runLater(() -> this.progressText.setText("Preparing... "));
                         DECOMP_SETTINGS.setTypeLoader((ITypeLoader)new ClassTypeLoader());
-                        File file = f = isZip ? this.unzip(this.actualMod, String.valueOf(this.actualMod.getAbsolutePath().replaceAll(".zip|.jar", "")) + " deobf") : this.actualMod;
+                        File file = f = isZip ? this.unzip(this.actualMod, String.valueOf(this.actualMod.getAbsolutePath().replaceAll(".zip|.jar", "")) + DEOBF_FOLDER_SUFFIX) : this.actualMod;
                         if (isZip) {
                             this.doLog("Mod files successfully extracted to \"" + f + "\"!", Color.GREEN);
                         }
