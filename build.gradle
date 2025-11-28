@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "17.0.13"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.media', 'javafx.swing', 'javafx.web', 'javafx.base' ]
+}
+
+dependencies {
+    implementation 'org.bitbucket.mstrobel:procyon-compilertools:0.6.0'
+    implementation 'org.bitbucket.mstrobel:procyon-core:0.6.0'
+    implementation 'net.lingala.zip4j:zip4j:2.11.5'
+}
+
+application {
+    mainClass = 'org.ugp.mc.deobfuscator.Main'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src']
+            exclude '**/*.java'
+        }
+    }
+}

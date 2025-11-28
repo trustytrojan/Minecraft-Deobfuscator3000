@@ -1,7 +1,8 @@
 # Minecraft-Deobfuscator3000 Decompiled
 - Decompilied with CFR, removing the need to run on Windows.
-- Chose to stick to Java 17. Provides [setup_javafx.sh](/setup_javafx.sh) script for downloading JavaFX 17 for Linux.
-- Run `make` to compile all classes into `bin`, and `make run` to run the app.
+- Converted to Gradle build system.
+- Run `gradle run` to run the app.
+- Run `gradle build` to build the project.
 
 **The README contents from the original repo are below.**
 
